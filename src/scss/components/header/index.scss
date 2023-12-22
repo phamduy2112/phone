@@ -1,10 +1,18 @@
 @use "../../base/variable" as *; // nhớ có as * vì import vào sủ dụng tên biến
 .header{
-    height: 9rem;
+  
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 999999999;
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 2px 4px #e2ebfc;
+    
+    height: $h-header;
     padding-left: 3rem;
     padding-right: 3rem;
     h1{
