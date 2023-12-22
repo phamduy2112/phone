@@ -1,0 +1,66 @@
+@use "../../base/variable" as *; // nhớ có as * vì import vào sủ dụng tên biến
+.header{
+    height: 9rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px #e2ebfc;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    h1{
+        font-size: 2.6rem;
+        font-weight: 600;
+        color: $color-chudao;
+    }
+    // lồng nhìu nhất 3 cấp
+    .navigation{
+        .nav-item{
+            // cách tạo biến:$<ten_bien>
+
+            $padding:2.5rem;
+            padding-left: $padding;
+            padding-right: $padding;
+            &::after{
+                content:"";
+                display: block;
+            
+                height: .2rem;
+                background-color: $color-chudao;
+                color: black;
+               
+                transform:scale(0);
+                transition: all .5s;
+            }
+            &:hover{
+                &::after{
+                    color: $color-chudao;
+                    transform:scale(1);
+                }
+            }
+        }
+        ul{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+        .nav-link{
+            text-decoration: none;
+            color: black;
+            font-size: 1.6rem;
+            &.nav-link__active{
+                &::after{
+                    
+                }
+                border-bottom: 0.2rem solid $color-chudao;
+                color: $color-chudao;
+                font-weight: 600;
+    
+            }
+      
+        }
+        // .nav-link.nav-link__active{
+
+        // }
+    }
+}
